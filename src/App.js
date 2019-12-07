@@ -6,8 +6,15 @@ class App extends React.Component {
     super(props);
     this.state = {
       inputValue: "",
-      contentDisplay: ['ajksdfjkasdfjksa','萨科技发数据开发开始']
+      contentDisplay: []
     };
+  }
+  UserClick = () => {
+    console.log('用户相关')
+    fetch('http://localhost:3002/getuserlist')
+  }
+  AddClick = () => {
+    console.log("广告相关")
   }
   render(){
     return (
@@ -21,12 +28,8 @@ class App extends React.Component {
             }}/>
           </div>
           <div className="searches-buttons">
-            <button className="search-button" onClick={()=>{
-              console.log("用户相关")
-            }}>用户相关</button>
-            <button className="search-button" onClick={()=>{
-              console.log("广告相关")
-            }}>广告相关</button>
+            <button className="search-button" onClick={this.UserClick}>用户相关</button>
+            <button className="search-button" onClick={this.AddClick}>广告相关</button>
           </div>
         </div>
         <div className="content-display-area">

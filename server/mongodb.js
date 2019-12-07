@@ -49,3 +49,7 @@ fs.readFile('user_ad_click.csv', function(err, data){
 		})
 	}
 })
+
+module.exports = {
+	UserAddClick
+}

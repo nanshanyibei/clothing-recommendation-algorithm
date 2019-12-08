@@ -35,5 +35,9 @@
   background: #ffccff;
 }
 .content-display-area{
-  margin: 200px 0 0 0;
+  margin: 160px 0 0 0;
+}
+.title-neights-list{
+  margin: 5px;
+  border: 1px solid #ff6666
 }

@@ -11,10 +11,25 @@ class App extends React.Component {
   }
   UserClick = () => {
     console.log('用户相关')
-    fetch('http://localhost:3002/getuserlist')
+    fetch(`http://localhost:3002/getuserlist?title=${this.state.inputValue}&is_click=0`)
+      .then(res => {
+        return res.json()
+      })
+      .then(res => {
+        console.log('res', res)
+        this.setState({contentDisplay: res.data})
+      })
   }
   AddClick = () => {
     console.log("广告相关")
+    fetch(`http://localhost:3002/getuserlist?title=${this.state.inputValue}&is_click=1`)
+      .then(res => {
+        return res.json()
+      })
+      .then(res => {
+        console.log('res', res)
+        this.setState({contentDisplay: res.data})
+      })
   }
   render(){
     return (
@@ -34,7 +49,9 @@ class App extends React.Component {
         </div>
         <div className="content-display-area">
           {this.state.contentDisplay.map(e => {
-            return <div key={e}>{e}</div>
+            return <div className="title-neights-list" key={e._id}>
+              {e.title_neights_list}
+            </div>
           })}
         </div>
       </div>

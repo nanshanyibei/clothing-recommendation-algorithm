@@ -8,11 +8,10 @@
   width: 100%;
   position: fixed;
   top: 0;
-  height: 150px;
-  background: gold;
+  height: 170px;
+  background: #69ba6b;
 }
 .searchs-input{
-  background: pink;
   width: fit-content;
   margin: 20px auto;
 }
@@ -32,12 +31,45 @@
   width: 100px;
   height: 30px;
   margin: 0 20px;
-  background: #ffccff;
+  background: #83c8d0;
+  color: #ffffff
 }
 .content-display-area{
-  margin: 160px 0 0 0;
+  margin: 170px 0 0 0;
 }
 .title-neights-list{
   margin: 5px;
-  border: 1px solid #ff6666
+  border: 1px solid #f66
+}
+.adverse-demo{
+  width: fit-content;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 30px
+}
+.contextual-information{
+  padding-bottom: 10px;
+}
+.top-content{
+  width: 50%;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  text-align: center;
+}
+.content-search-element{
+  display: flex
+}
+.top-title-content, .top-title-search{
+  width: 50%;
+  word-break: break-all;
+  padding: 4px;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.top-title-search{
+  border-left: 0px
 }

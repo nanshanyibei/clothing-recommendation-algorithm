@@ -15,13 +15,25 @@ app.all('*', function(req, res, next) {
 
 app.get("/getuserlist",function(req,res){
 	console.log('req', req.query)
-	UserAddClick.find({title: req.query.title, is_click: req.query.is_click}, function(err, doc){
-		if(err){
-			console.log('后端出错')
-			return
-		}
-		return res.json({code: 0, data: doc})
-	})
+	if(req.query.uid) {
+		UserAddClick.find({uid: req.query.uid}, function(err, doc){
+			if(err){
+				console.log('后端出错')
+				return
+			}
+			return res.json({code: 0, data: doc})
+		})
+	}
+	if(req.query.title) {
+		console.log("这是title")
+		UserAddClick.find({title: req.query.title}, function(err, doc){
+			if(err){
+				console.log('后端出错')
+				return
+			}
+			return res.json({code: 0, data: doc})
+		})
+	}
 })
 
 app.listen(3002, function(){

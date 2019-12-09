@@ -1,7 +1,10 @@
 const express = require('express')
+const path = require('path')
 const UserAddClick = require('./mongodb').UserAddClick
 
 const app = express()
+
+app.use(express.static(path.join(__dirname, './build')))
 
 // 设置跨越
 app.all('*', function(req, res, next) {
@@ -12,6 +15,7 @@ app.all('*', function(req, res, next) {
 	if(req.method == "OPTIONS") res.send(200);
 	else  next();
 });
+
 
 app.get("/getuserlist",function(req,res){
 	console.log('req', req.query)

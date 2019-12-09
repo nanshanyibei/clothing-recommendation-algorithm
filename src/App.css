@@ -35,7 +35,7 @@
   color: #ffffff
 }
 .content-display-area{
-  margin: 170px 0 0 0;
+  margin: 180px 0 0 0;
 }
 .title-neights-list{
   margin: 5px;
@@ -48,7 +48,7 @@
   font-size: 30px
 }
 .contextual-information{
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .top-content{
   width: 50%;
@@ -66,6 +66,7 @@
   width: 50%;
   word-break: break-all;
   padding: 4px;
+  text-align: center;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;

@@ -11,24 +11,40 @@ class App extends React.Component {
   }
   UserClick = () => {
     console.log('用户相关')
-    fetch(`http://localhost:3002/getuserlist?uid=${this.state.inputValue}`)
+    fetch(`http://39.97.184.70:3002/getuserlist?uid=${this.state.inputValue}`)
       .then(res => {
         return res.json()
       })
       .then(res => {
         console.log('res', res)
-        this.setState({contentDisplay: res.data})
+        let temp = []
+        res.data.map(e => {
+          const element = {}
+          element.uid_neights_list = e.uid_neights_list.split('|')[Math.ceil(Math.random()*(e.uid_neights_list.split('|').length - 3))]
+          element.title_neights_list = e.title_neights_list.split('|')[Math.ceil(Math.random()*(e.title_neights_list.split("|").length - 3))]
+          element._id = e._id
+          temp.push(element)
+        })
+        this.setState({contentDisplay: temp})
       })
   }
   AddClick = () => {
     console.log("广告相关")
-    fetch(`http://localhost:3002/getuserlist?title=${this.state.inputValue}`)
+    fetch(`http://39.97.184.70:3002/getuserlist?title=${this.state.inputValue}`)
       .then(res => {
         return res.json()
       })
       .then(res => {
         console.log('res', res)
-        this.setState({contentDisplay: res.data})
+        let temp = []
+        res.data.map(e => {
+          const element = {}
+          element.uid_neights_list = e.uid_neights_list.split('|')[Math.ceil(Math.random()*(e.uid_neights_list.split('|').length - 3))]
+          element.title_neights_list = e.title_neights_list.split('|')[Math.ceil(Math.random()*(e.title_neights_list.split("|").length - 3))]
+          element._id = e._id
+          temp.push(element)
+        })
+        this.setState({contentDisplay: temp})
       })
   }
   render(){
